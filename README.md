@@ -1,5 +1,5 @@
 ## **Overview:** 
-- Research project focused on enhancing energy-efficient routing in Wireless Sensor Networks (WSNs) using Swarm Intelligence.
+- Research project focused on enhancing energy-efficient routing in Wireless Sensor Networks (WSNs) using Swarm Intelligence Algorithms.
 
 ## **Role:**
 - Varun Niraj Agarwal, Avaneesh Kanshi, and Navneet Vinod Melarkode from VIT Computer Science and Engineering Dept.
