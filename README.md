@@ -41,7 +41,7 @@
 - Compared results in various parameters, including network lifetime, average path hops, path length, and energy levels.
 
 ## **Featured Content:**
-- Published in the [IEEE Explore Journal](https://ieeexplore.ieee.org/document/9952718)
+- Published in [IEEE Xplore](https://ieeexplore.ieee.org/document/9952718) (I4Tech 2022 conference): [doi:10.1109/I4Tech55392.2022.9952718](https://doi.org/10.1109/I4Tech55392.2022.9952718)
 
 ## **Conclusion:**
 - Contributed significantly to advancing energy-efficient routing in WSNs.
