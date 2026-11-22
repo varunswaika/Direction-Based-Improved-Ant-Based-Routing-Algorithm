@@ -1,82 +1,52 @@
-## **Overview:** 
-- Research project focused on enhancing energy-efficient routing in Wireless Sensor Networks (WSNs) using Swarm Intelligence Algorithms.
+# Direction Based-Improved Ant Based Routing Algorithm (DB-IABR)
 
-## **Role:**
-- Varun Niraj Agarwal, Avaneesh Kanshi, and Navneet Vinod Melarkode from VIT Computer Science and Engineering Dept.
-- Responsibilities: algorithm design, coding, simulation, and analysis.
+Python simulations for an energy-aware routing protocol for wireless sensor networks, built on ant colony optimisation. The code compares three protocols on the same random network: ant-based routing (ABR), improved ant-based routing (IABR) and the proposed direction-based IABR (DB-IABR).
 
-## **Technologies Used:**
-- Python and MATLAB for implementing traditional, improved, and DB-IABR protocols.
-- Utilized Matplotlib for real-time visualization.
-- DB-IABR built upon Ant Colony Optimization (ACO).
+![Simulation of the routing protocols](Sample.gif)
 
-## **Key Achievements:**
-- Developed Direction Based-Improved Ant Based Routing Algorithm (DB-IABR).
-- Successfully implemented and tested protocols in Python and MATLAB.
-![alt text](Sample.gif "Sample Simulation")
-- Demonstrated superior performance of DB-IABR in terms of energy efficiency and network optimization.
-- Simulated existing routing protocols for comparison.
+**Published:** IEEE conference paper, 2022 International Conference on Industry 4.0 Technology (I4Tech), pp. 1–6. DOI: [10.1109/I4Tech55392.2022.9952718](https://doi.org/10.1109/I4Tech55392.2022.9952718). The paper PDF is in this repository.
 
-## **Challenges Overcome:**
-- Addressed challenges related to efficient packet forwarding, path optimization, and energy conservation.
-- Mitigated challenges through careful algorithmic design.
+## Why it is interesting
 
-## **Collaboration:**
-- Collaborative effort among team members from VIT's School of Computer Science Engineering.
-- Regular meetings, brainstorming, and shared responsibilities for effective problem-solving.
+- Ants pick their next hop with a probability built from the pheromone on the link, the node's remaining energy and, in DB-IABR, a direction term that grows as the node gets closer to the sink (`Code/dbiabr.py`). This steers packets towards the sink without a global routing table.
+- On the way back, ABR sets the pheromone it deposits from the path's hop count and length; IABR and DB-IABR also use the average and minimum remaining energy of the nodes on the path, so energy is part of what makes a route attractive.
 
-## **Learnings:**
-- Insights into Swarm Intelligence algorithms, particularly Ant Colony Optimization.
-- Understanding trade-offs between energy efficiency, path optimization, and security in WSNs.
-
-## **Key Skills Demonstrated:**
-- Algorithm design and optimization.
-- Python and MATLAB programming.
-- Simulation and analysis.
-- Effective collaboration and teamwork.
-
-## **Results:**
-- Simulated traditional, improved, and DB-IABR protocols in a similar network with Python and MATLAB.
-- Simulated existing routing protocols for benchmarking and comparison.
-- Compared results in various parameters, including network lifetime, average path hops, path length, and energy levels.
-
-## **Featured Content:**
-- Published in [IEEE Xplore](https://ieeexplore.ieee.org/document/9952718) (I4Tech 2022 conference): [doi:10.1109/I4Tech55392.2022.9952718](https://doi.org/10.1109/I4Tech55392.2022.9952718)
-
-## **Conclusion:**
-- Contributed significantly to advancing energy-efficient routing in WSNs.
-- DB-IABR demonstrated superior performance, offering a balance between energy conservation and network optimization.
-- Pride in being part of a project with tangible results.
-- Future work may focus on optimizing security aspects and ensuring scalability of the DB-IABR algorithm in real-world applications.
-
-
-
-# How to Run
-
-## Simulation Visual Representation
-
-The visual representation and simulation of changing networks using different protocols can be executed through the following Python files located in the `code/Simulations` directory:
-
-- `ABR.py`: Simulates the network using the ABR protocol.
-- `IABR.py`: Simulates the network using the IABR protocol.
-- `DBIABR.py`: Simulates the network using the DBIABR protocol.
-
-To run a simulation, navigate to the `code/Simulations` directory and execute the desired Python file:
+## Run it
 
 ```bash
-python ABR.py
+pip install -r requirements.txt
+cd Code
+python main.py               # runs ABR, IABR and DB-IABR on the same network and prints the metrics
+cd Simulations
+python DBIABR.py             # animated view of one protocol; ABR.py and IABR.py likewise
 ```
 
-## Protocol Comparison
+`main.py` reports, for each protocol, the network lifetime (successful packets), failed attempts, average path hops, path length, time and energy per packet. Network and energy parameters are in `Code/params.py`. The `.ipynb` files in `Code/Simulations/` are notebook versions of the same simulations.
 
-The main protocol comparison is performed using the `main.py` file located in the `/code/` directory. This file compares the protocols over the same network and produces results in various parameters, including network lifetime, average path hops, path length, and energy levels.
+## Tech
 
-To run the protocol comparison, navigate to the `/code/` directory and execute the `main.py` file:
+Python, NumPy, Matplotlib.
 
-```bash
-python main.py
+## Context
+
+Research project at VIT Vellore, School of Computer Science and Engineering, 2022. The full author list is in the citation below.
+
+## Cite
+
+```bibtex
+@inproceedings{Kanshi2022DBIABR,
+  title     = {Direction Based-Improved Ant Based Routing Algorithm},
+  author    = {Kanshi, Avaneesh and Melarkode, Navneet Vinod and Agarwal, Varun Niraj},
+  booktitle = {2022 International Conference on Industry 4.0 Technology (I4Tech)},
+  publisher = {IEEE},
+  year      = {2022},
+  pages     = {1--6},
+  doi       = {10.1109/I4Tech55392.2022.9952718}
+}
 ```
 
-This will generate comprehensive results and metrics for each protocol, allowing for a detailed analysis and comparison.
+GitHub also reads `CITATION.cff` and shows a "Cite this repository" button.
 
-Make sure you have Python installed on your machine and all required dependencies are satisfied before running the simulations. Additionally, feel free to explore and customize the simulation parameters within the respective Python files to suit your specific needs.
+## License
+
+MIT, see LICENSE.

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Direction Based-Improved Ant Based Routing Algorithm (DB-IABR) simulations"
+type: software
+license: MIT
+repository-code: "https://github.com/VarunAgarwalOfficial/Direction-Based-Improved-Ant-Based-Routing-Algorithm"
+authors:
+  - family-names: Agarwal
+    given-names: Varun Niraj
+    orcid: "https://orcid.org/0000-0002-0785-5357"
+preferred-citation:
+  type: conference-paper
+  title: "Direction Based-Improved Ant Based Routing Algorithm"
+  authors:
+    - family-names: Kanshi
+      given-names: Avaneesh
+    - family-names: Melarkode
+      given-names: Navneet Vinod
+    - family-names: Agarwal
+      given-names: Varun Niraj
+      orcid: "https://orcid.org/0000-0002-0785-5357"
+  collection-title: "2022 International Conference on Industry 4.0 Technology (I4Tech)"
+  conference:
+    name: "2022 International Conference on Industry 4.0 Technology (I4Tech)"
+  publisher:
+    name: IEEE
+  year: 2022
+  start: 1
+  end: 6
+  doi: "10.1109/I4Tech55392.2022.9952718"
