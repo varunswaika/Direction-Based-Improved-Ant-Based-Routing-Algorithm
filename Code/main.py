@@ -1,13 +1,12 @@
-import matplotlib.pyplot as plt
 import copy
+
+import matplotlib.pyplot as plt
 import numpy as np
 from abr import *
-from iabr import *
 from dbiabr import *
-
-
-from params import *
+from iabr import *
 from node import *
+from params import *
 
 
 class Graph:
@@ -18,7 +17,12 @@ class Graph:
     def find_neighbors(self, node):
         edges = []
         for node2 in self.nodes:
-            if (node != node2) and (dist(node, node2) < MAX_DISTANCE) and (node2.energy > 0) and (node.energy > 0):
+            if (
+                (node != node2)
+                and (dist(node, node2) < MAX_DISTANCE)
+                and (node2.energy > 0)
+                and (node.energy > 0)
+            ):
                 edges.append(1)
             else:
                 edges.append(0)
@@ -82,7 +86,9 @@ while no_of_packets > 0:
             avg_paths_hops_ABR.append(len(ant.path))
             succesfull_packets_ABR += 1
             avg_time_ABR.append(
-                (len(ant.path)*2) * ((BACKWARD_ANT_SIZE + FORWARD_ANT_SIZE) / BANDWIDTH))
+                (len(ant.path) * 2)
+                * ((BACKWARD_ANT_SIZE + FORWARD_ANT_SIZE) / BANDWIDTH)
+            )
             avg_distance_ABR.append(ant.distance_travelled)
     graph_ABR.update()
     no_of_packets -= 1
@@ -106,7 +112,9 @@ print(f"AVG PATH LENGTH : {np.mean(avg_distance_ABR)}")
 print(f"AVG TIME TAKEN : {np.mean(avg_time_ABR)}")
 
 print(f"AVG ENERGY LEVELS  AFTER ALL THE SUCCESSFUL PACKETS : {avg_energys_ABR[-1]}")
-print(f"AVG ENERGY PER PACKET : {(NO_OF_NODES*INITIAL_ENERGY)/succesfull_packets_ABR}")
+print(
+    f"AVG ENERGY PER PACKET : {(NO_OF_NODES * INITIAL_ENERGY) / succesfull_packets_ABR}"
+)
 
 
 # IABR
@@ -146,7 +154,9 @@ while no_of_packets > 0:
                 avg_paths_hops_IABR.append(len(ant.path))
                 succesfull_packets_IABR += 1
                 avg_time_IABR.append(
-                    (len(ant.path)*2) * ((BACKWARD_ANT_SIZE + FORWARD_ANT_SIZE) / BANDWIDTH))
+                    (len(ant.path) * 2)
+                    * ((BACKWARD_ANT_SIZE + FORWARD_ANT_SIZE) / BANDWIDTH)
+                )
                 avg_distance_IABR.append(ant.distance_travelled)
         graph_IABR.update()
         no_of_packets -= 1
@@ -182,7 +192,9 @@ print(f"AVG PATH LENGTH : {np.mean(avg_distance_IABR)}")
 print(f"AVG TIME TAKEN : {np.mean(avg_time_IABR)}")
 
 print(f"AVG ENERGY LEVELS  AFTER ALL THE SUCCESSFUL PACKETS : {avg_energys_IABR[-1]}")
-print(f"AVG ENERGY PER PACKET : {(NO_OF_NODES*INITIAL_ENERGY)/succesfull_packets_IABR}")
+print(
+    f"AVG ENERGY PER PACKET : {(NO_OF_NODES * INITIAL_ENERGY) / succesfull_packets_IABR}"
+)
 
 
 # DBIABR
@@ -222,7 +234,9 @@ while no_of_packets > 0:
                 avg_paths_hops_DBIABR.append(len(ant.path))
                 succesfull_packets_DBIABR += 1
                 avg_time_DBIABR.append(
-                    (len(ant.path)*2) * ((BACKWARD_ANT_SIZE + FORWARD_ANT_SIZE) / BANDWIDTH))
+                    (len(ant.path) * 2)
+                    * ((BACKWARD_ANT_SIZE + FORWARD_ANT_SIZE) / BANDWIDTH)
+                )
                 avg_distance_DBIABR.append(ant.distance_travelled)
         graph_DBIABR.update()
         no_of_packets -= 1
@@ -258,14 +272,16 @@ print(f"AVG PATH LENGTH : {np.mean(avg_distance_DBIABR)}")
 print(f"AVG TIME TAKEN : {np.mean(avg_time_DBIABR)}")
 
 print(f"AVG ENERGY LEVELS  AFTER ALL THE SUCCESSFUL PACKETS : {avg_energys_DBIABR[-1]}")
-print(f"AVG ENERGY PER PACKET : {(NO_OF_NODES*INITIAL_ENERGY)/succesfull_packets_DBIABR}")
+print(
+    f"AVG ENERGY PER PACKET : {(NO_OF_NODES * INITIAL_ENERGY) / succesfull_packets_DBIABR}"
+)
 
 
 plt.clf()
 plt.plot(avg_energys_ABR)
 plt.plot(avg_energys_IABR)
 plt.plot(avg_energys_DBIABR)
-plt.legend(['ABR', 'IABR', 'DB-IABR'])
+plt.legend(["ABR", "IABR", "DB-IABR"])
 plt.title("Average Energy of nodes")
 plt.xlabel("Time (ms)")
 plt.ylabel("Energy (Joules)")
@@ -276,11 +292,10 @@ plt.clf()
 plt.plot(avg_paths_hops_ABR)
 plt.plot(avg_paths_hops_IABR)
 plt.plot(avg_paths_hops_DBIABR)
-plt.legend(['ABR', 'IABR', 'DB-IABR'])
+plt.legend(["ABR", "IABR", "DB-IABR"])
 plt.title("Path hops")
 plt.xlabel("Packet Number")
 plt.ylabel("Hops")
-
 
 
 plt.show()
@@ -289,7 +304,7 @@ plt.clf()
 plt.plot(avg_distance_ABR)
 plt.plot(avg_distance_IABR)
 plt.plot(avg_distance_DBIABR)
-plt.legend(['ABR', 'IABR', 'DB-IABR'])
+plt.legend(["ABR", "IABR", "DB-IABR"])
 plt.title("Path length")
 plt.xlabel("Packets")
 plt.ylabel("Distance Travelled (km)")
@@ -300,10 +315,8 @@ plt.clf()
 plt.plot(avg_time_ABR)
 plt.plot(avg_time_IABR)
 plt.plot(avg_time_DBIABR)
-plt.legend(['ABR', 'IABR', 'DB-IABR'])
+plt.legend(["ABR", "IABR", "DB-IABR"])
 plt.title("Latency")
 plt.xlabel("Packets")
 plt.ylabel("Time Taken (us))")
 plt.show()
-
-
