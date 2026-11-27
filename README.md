@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/banner.png" alt="Pixel art: ants follow a trail between sensor posts to a base station" width="100%"></p>
+<p align="center"><img src="docs/banner.png" alt="Pixel art: ants carry packets along a lit path from their nest past sensor posts to a base station" width="100%"></p>
 
 # Ant routing
 
