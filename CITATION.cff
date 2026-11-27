@@ -3,7 +3,7 @@ message: "If you use this code, please cite the paper below."
 title: "Direction Based-Improved Ant Based Routing Algorithm (DB-IABR) simulations"
 type: software
 license: MIT
-repository-code: "https://github.com/VarunAgarwalOfficial/Direction-Based-Improved-Ant-Based-Routing-Algorithm"
+repository-code: "https://github.com/varunswaika/Direction-Based-Improved-Ant-Based-Routing-Algorithm"
 authors:
   - family-names: Agarwal
     given-names: Varun Niraj
