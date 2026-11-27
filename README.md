@@ -1,4 +1,10 @@
-# Direction Based-Improved Ant Based Routing Algorithm (DB-IABR)
+<p align="center"><img src="docs/banner.png" alt="Pixel art: ants follow a trail between sensor posts to a base station" width="100%"></p>
+
+# Ant routing
+
+Ant colony routing for wireless sensor networks, comparing ABR, IABR and DB-IABR (IEEE I4Tech 2022 paper).
+
+[MIT licence](LICENSE)
 
 Python simulations for an energy-aware routing protocol for wireless sensor networks, built on ant colony optimisation. The code compares three protocols on the same random network: ant-based routing (ABR), improved ant-based routing (IABR) and the proposed direction-based IABR (DB-IABR).
 
